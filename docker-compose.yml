@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  terraform:
+    container_name: terraform
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+    # /host/terraform/workdirを作業したいホスト側ディレクトリに修正してください
+      - /host/terraform/workdir:/terraform
+      - ./aws/config:/root/.aws
