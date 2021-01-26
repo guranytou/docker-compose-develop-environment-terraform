@@ -2,7 +2,7 @@
 Terraform（tfenv）とaws-cliが利用可能です。
 
 ## 使い方
-- /aws/config配下にcredentialsというファイルを作成してくださいE
+- /aws/config配下にcredentialsというファイルを作成してください
 ```credentials
 [default]
 aws_access_key_id=AKIAYEXAMPLEKEYID
