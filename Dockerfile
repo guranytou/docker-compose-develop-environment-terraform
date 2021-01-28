@@ -17,7 +17,7 @@ RUN apk update --no-cache \
 # install tfenv
 RUN git clone https://github.com/tfutils/tfenv.git /home/.tfenv
 ENV PATH $PATH:/home/.tfenv/bin
-RUN tfenv install 0.14.5 \ 
+RUN tfenv install 0.14.5 \
     && tfenv install 0.13.6 \
     && tfenv install 0.12.30 \
     && tfenv use 0.14.5

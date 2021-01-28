@@ -12,6 +12,18 @@ if [ -z "${AWS_ACCESS_KEY_ID}" ]; then
     exit 1
 fi
 
+if [ -z "${AWS_SECRET_ACCESS_KEY}" ]; then
+    echo "${AWS_SECRET_ACCESS_KEY}"
+	echo "Require Environment Variables: AWS_SECRET_ACCESS_KEY"
+    exit 1
+fi
+
+if [ -z "${AWS_REGION}" ]; then
+    echo "${AWS_REGION}"
+	echo "Require Environment Variables: AWS_REGION"
+    exit 1
+fi
+
 ##############################################################################
 # Create credential file
 ##############################################################################
