@@ -9,7 +9,7 @@ services:
     tty: true
     volumes:
     # /host/terraform/workdirを作業したいホスト側ディレクトリに修正してください
-      - ../:/terraform
+      - /host/terraform/workdir:/terraform
     environment:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
