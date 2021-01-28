@@ -8,8 +8,7 @@ services:
       dockerfile: Dockerfile
     tty: true
     volumes:
-    # /host/terraform/workdirを作業したいホスト側ディレクトリに修正してください
-      - /host/terraform/workdir:/terraform
+      - ${WORK_DIR}:/terraform
     environment:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}

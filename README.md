@@ -16,12 +16,7 @@ Terraform（tfenv）とaws-cliが利用可能です。
 
 # How to use
 ## 事前準備
-- docker-compose.ymlのvolumesを編集してください
-```yaml: docker-compose.yml
-volumes:
-# /host/terraform/workdirを作業したいホスト側ディレクトリに修正してください
-    - /host/terraform/workdir:/terraform
-```
+- `${WORK_DIR}`へTerraformを使いたいホスト側ディレクトリを設定してください
 
 - 上記が完了したら、下記コマンドを叩いてしばらくお待ちください
 ```
