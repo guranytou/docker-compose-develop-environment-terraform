@@ -1,6 +1,9 @@
 FROM alpine:latest
 
 ARG GLIBC_VER=2.31-r0
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+ARG AWS_REGION
 
 RUN apk update --no-cache \
     && apk add --no-cache \
@@ -30,4 +33,11 @@ RUN curl -sL https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv
     && unzip -q awscliv2.zip
 RUN aws/install
 
+RUN mkdir /root/.aws/
+
 WORKDIR /terraform
+
+COPY ./docker-entrypoint.sh /
+
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
+CMD [ "/bin/bash" ]
