@@ -16,7 +16,7 @@ Terraform（tfenv）とaws-cliが利用可能です。
 
 # How to use
 ## 事前準備
-- `${WORK_DIR}`へTerraformを使いたいホスト側ディレクトリを設定してください
+- `${WORK_DIR}`へTerraformを使いたいディレクトリを設定してください
 
 - 上記が完了したら、下記コマンドを叩いてしばらくお待ちください
 ```
