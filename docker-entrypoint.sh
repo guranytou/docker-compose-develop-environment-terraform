@@ -18,9 +18,15 @@ if [ -z "${AWS_SECRET_ACCESS_KEY}" ]; then
     exit 1
 fi
 
-if [ -z "${AWS_REGION}" ]; then
-    echo "${AWS_REGION}"
-	echo "Require Environment Variables: AWS_REGION"
+if [ -z "${AWS_DEFAULT_REGION}" ]; then
+    echo "${AWS_DEFAULT_REGION}"
+	echo "Require Environment Variables: AWS_DEFAULT_REGION"
+    exit 1
+fi
+
+if [ -z "${AWS_SESSION_TOKEN}" ]; then
+    echo "${AWS_SESSION_TOKEN}"
+	echo "Require Environment Variables: AWS_DEFAULT_REGION"
     exit 1
 fi
 
@@ -31,11 +37,12 @@ fi
     echo "[profile default]"
     echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
     echo "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
+    echo "AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN"
 } >> /root/.aws/credentials
 
 {
     echo "[profile default_role]"
-    echo "AWS_REGION=$AWS_REGION"
+    echo "AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION"
 } >> /root/.aws/config
 
 echo $AWS_ACCESS_KEY_ID
