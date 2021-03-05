@@ -1,14 +1,12 @@
 FROM golang:1.16.0-alpine3.13
 
 ARG GLIBC_VER=2.31-r0
-ARG TFMIGRATE_VER=0.2.2
 ARG AWS_ACCESS_KEY_ID
 ARG AWS_SECRET_ACCESS_KEY
 ARG AWS_REGION
 
 RUN apk update --no-cache \
     && apk add --no-cache \
-        wget \
         unzip \
         curl \
         git \
