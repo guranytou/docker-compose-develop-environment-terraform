@@ -1,5 +1,5 @@
 # docker-compose-develop-environment-terraform
-Terraform（tfenv）とaws-cliが利用可能です。
+Terraform（tfenv）とaws-cliとtfmigrateが利用可能です。
 
 # Requirement Software
 - Docker
