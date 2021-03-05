@@ -1,6 +1,7 @@
-FROM alpine:latest
+FROM golang:1.16.0-alpine3.13
 
 ARG GLIBC_VER=2.31-r0
+ARG TFMIGRATE_VER=0.2.2
 ARG AWS_ACCESS_KEY_ID
 ARG AWS_SECRET_ACCESS_KEY
 ARG AWS_REGION
@@ -12,7 +13,8 @@ RUN apk update --no-cache \
         curl \
         git \
         bash \
-        binutils
+        binutils \
+        make
 
 # install tfenv
 RUN git clone https://github.com/tfutils/tfenv.git /home/.tfenv
@@ -32,6 +34,11 @@ RUN curl -sL https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/
 RUN curl -sL https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip \
     && unzip -q awscliv2.zip
 RUN aws/install
+
+# install tfmigrate
+RUN git clone https://github.com/minamijoyo/tfmigrate
+WORKDIR tfmigrate
+RUN make install
 
 RUN mkdir /root/.aws/
 
