@@ -36,7 +36,6 @@ docker exec -it terraform bash
 
 ## terraformのversion
 このコンテナでは以下のバージョンが予めインストールされています。  
-利用したいバージョンが別にある場合はDockerfileを修正してください。
 - 0.14.5 (default)
 - 0.13.6
 - 0.12.30
