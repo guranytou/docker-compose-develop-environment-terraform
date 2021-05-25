@@ -17,10 +17,11 @@ RUN apk update --no-cache \
 # install tfenv
 RUN git clone https://github.com/tfutils/tfenv.git /home/.tfenv
 ENV PATH $PATH:/home/.tfenv/bin
-RUN tfenv install 0.14.5 \
-    && tfenv install 0.13.6 \
-    && tfenv install 0.12.30 \
-    && tfenv use 0.14.5
+RUN tfenv install 0.14.11 \
+    && tfenv install 0.13.7 \
+    && tfenv install 0.12.31 \
+    && tfenv install 0.15.4 \
+    && tfenv use 0.15.4
 
 # install glibc
 RUN curl -sL https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub \
